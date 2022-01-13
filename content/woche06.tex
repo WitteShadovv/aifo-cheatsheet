@@ -8,7 +8,6 @@ Man nutzt es hauptsächlich für:
 \includegraphics[width=\linewidth]{img/linear_regression.png}
 \subsection{Linear Regression und Machine Learning}
 Lineare Regression wird von Statistik «ausgeliehen». Hier ist es ein Beispiel von Algorithmen oder Techniken aus dem supervised learning. Wir haben also Inputdaten X und die Labels (In unserem Fall Y). Dann wird ein einfacher Algorithmus verwendet um daraus den Linearen Zusammenhang zu sehen. Das Modell soll also lernen Y vorauszusagen.\\
-\\
 \textcolor{myblue}{Model}\\
 In ML Model steht für irgendeine mathematische Funktion, welche die Daten erklärt.
 $$y_i \approx f(x_i)$$
@@ -31,9 +30,18 @@ $$=\frac{1}{2N}\sum_{i=1}^N(y_i-(a * x_i + b))^2$$
 Korrelation ist \textbf{nicht} Kausalität!\\
 Auch wenn der Koeffizient 0 ist können die Daten strukuriert sein -> Keine Aussagen über Kausalität machen. Immer Daten visualisieren und ebenso die Residuals.
 \subsection{Komplexere Lineare Modelle}
-EVTL TODO
+\includegraphics[width=\linewidth]{img/komplexere_lineare_modelle.png}
 \subsection{Uniform Distrubution, Normal Distribution}
-Evtl TODO: Übernehmen aus ExEv Howtosolve
+Die Gleichverteilung (Uniform Distrubution) beschreibt eine Zufallsvariable, die jeden Wert innerhalb eines bestimmten
+Intervalls annehmen kann. Jeder Wert in diesem Intervall ist gleich wahrscheinlich.\\
+Bei der Normalverteilung (Gausian Distrubition) ist die Zufallsvariable an der Normalverteilung angelehnt.\\
+rng.normal(loc=0, scale=1, size=10000)\\
+loc=Mittel, Scale=Standardabweichung, size=Anzahl Samples
+$$x = Sollmenge (Sollfüllmenge)$$
+$$\mu = Momentaner Wert (Füllmenge)$$
+$$ \delta = Standardabweichung $$
+Stlg -> Menu -> 5 -> 8\\
+( A, B ) == [Sollfüllmenge, Sollfüllmenge]
 \subsection{Seaborn Jointplot}
 Der Jointplot ist eine Verbindung von zwei Variablen mit bivariaten und univariaten Graphen. Es zeigt die (empirischen) Randverteilungen als Histogramme. Das Ergebnis ist ideal: die Daten (x-Werte) sind gleichmäßig über den gesamten Bereich verteilt (Gleichverteilung in -50/+50), während die Residuen bei 0 zentriert sind (Standardnormalverteilung).
-\includegraphics[width=\linewidth]{img/seaborn_jointplot.png}
+\includegraphics[width=0.9\linewidth]{img/seaborn_jointplot.png}

@@ -2,9 +2,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
-%\usepackage[LY1,T1]{fontenc}
-%\usepackage{frutigernext}
-%\usepackage[lf,minionint]{MinionPro}
 \usepackage{tikz}
 \usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
 \usepackage[nosf]{kpfonts}
@@ -15,6 +12,8 @@
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{microtype}
 \usepackage{pdfpages}
+\usepackage{hyperref}
+
 
 \usepackage{graphicx}
 \graphicspath{ {./img/} }
@@ -27,8 +26,9 @@
 \begin{document}
 \footnotesize
 % \small
-\begin{multicols*}{5}
-
+\begin{multicols*}{4}
+\tableofcontents
+\vfill
 \input{content/woche01}
 \input{content/woche02}
 \input{content/woche03}
@@ -43,19 +43,6 @@
 \input{content/woche12}
 \input{content/woche13}
 \input{content/woche14}
-
-% \newpage
-% \input{content/logik}
-% \input{content/assembler}
-% \input{content/groessen}
-% \input{content/binaer}
-% \input{content/hex}
-% \input{content/lokalitaet}
-% \input{content/speicherallokation}
-% \input{content/c_language}
-% \input{content/cache}
-% \input{content/virtueller_speicher}
-% \input{content/verdraenungsstrategie}
-
+\input{content/code}
 \end{multicols*}
 \end{document}

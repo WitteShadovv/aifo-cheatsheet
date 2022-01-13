@@ -18,7 +18,7 @@ Beispiel: Gesichtserkennungsalgorithmus. Nun muss man Kosten schätzen wenn Gesi
 negativ ist. Je nach Ort kann es andere Auswirkungen haben. (Access-Control bei CIA oder Identifizierung von Kunden, die viel
 Geld ausgeben in einem Geschäft)
 \subsection{Model}
-Der Teil, der aus einem Input einen Output generiert. Kann einfach sein (Linear yi = axi + b) oder komplexes neuronalesNetzwerk mit Millionen von Parameter.
+Der Teil, der aus einem Input einen Output generiert. Kann einfach sein (Linear $y_i = ax_i + b$) oder komplexes neuronalesNetzwerk mit Millionen von Parameter.
 \\
 Typischerweise verwendet man Framework wie Tensorflow oder Pytorch
 \\
@@ -56,6 +56,7 @@ Beispiel: "Look at that little furry mukawibuu with white paws climbing a tree" 
 \\\\
 Bei Distributed Representation wird dieses Konzept genutzt gemacht. Ein Wort, welches indexiert wurde, wird mit einem Algorithmus (Embedding Layer) zu einem Vektor umgewandelt.
 \\
+\textbf{Word embedding} = Wörter in Vektoren umwandeln, welche die Bedeutung enkodieren.
 \includegraphics[width=\linewidth]{img/distrubuted-representation.png}
 \\
 Mit guten Vektoren kann man dann durch Mathematik Ähnlichkeiten erkennen oder durch Addition/Subtraktion neue Wörter bilden. Dazu wird das Skalarprodukt verwendet. Somit kann der Computer mittels Mathematik die Ähnlichkeiten von unterschiedlichen Wörter erkennen.

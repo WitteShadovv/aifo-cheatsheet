@@ -1,18 +1,22 @@
-\section{Cross-Validation}
+\section{Cross-Validation (k-Fold)}
 Ohne Cross-Validation: Test-Fehler basiert auf 20\% der Daten.\\
-Funktionsweise der k-Fold-Crossvalidation: Daten werden zuerst geshuffelt. Anschliessend aufgeteilt in k-Fold (Üblich: 5-Fold, 10-Fold. Gibt aber auch N-Fold wo jeder Fold nur ein Datenpunkt hat). Dann wird jedes mal ein anderer Fold als Test-Datensatz genommen und das Modell trainiert.\\
+Funktionsweise der k-Fold-Crossvalidation: Daten werden zuerst geshuffelt. Anschliessend aufgeteilt in k-Fold (Üblich: 5-Fold, 10-Fold. Gibt aber auch N-Fold wo jeder Fold nur ein Datenpunkt hat). Dann wird jedes mal ein anderer Fold als Test-Datensatz genommen und das Modell trainiert. Am Schluss kann man mit dem Durschnitt der Performance Scores des Models abschätzen wie gut es geklappt hat -> man kann die Generalisierungseigenschaften eines Models abschätzen. Wenn man ein gutes Model gefunden hat, kann man es erneut mit allen Trainingsdaten trainieren lassen.\\
 \textit{Hinweis: Daten in einem Fold ändern sich während den einzelnen Splits nicht. Diese bleiben über die ganzen Trainings gleich. Weiter muss die Preprocessing-Pipeline während den einzelnen Splits laufen und nicht davor, da sonst Ergebnisse verzerrt werden.}
 \includegraphics[width=\linewidth]{img/cross-validation.png}
 \subsection{Ziel 1: Generalisierungsfehler schätzen}
 Hier wird aus den einzelnen Testfehler der Durchschnitt genommen und so der Mean und die Variance des Testfehlers genommen. Ist genauer als mit einzelnen Tests.
 \subsection{Ziel 2: Auswahl von Hyperparameter}
-Man variert mit den Hyper[arameter (Regularisierungslamda, etc.) und findet so den optimalen Parameter $\lambda_{opt}$ heraus
+Man variert mit den Hyperparameter (Regularisierungslamda, etc.) und findet so den optimalen Parameter $\lambda_{opt}$ heraus
 \subsection{Scikit-learn Cross-Validation}
 Einzelne Daten werden vorher ganz rausgenommen als Testdaten. Dann wird mit anderen Cross-Validation gemacht. Wird meist empfohlen.
 \includegraphics[width=\linewidth]{img/scikit-cross-validation.png}
 \section{Artificial Neural Networks}
 AI ist inspiriert von unserem Gehirn und den Neuronen. Die biologischen Neuronen wurden vereinfacht in ein Artificial Neuron. Diese bieten ein Input-Vektor. Jedes Neuron hat seine eigenen Input-Gewichte und ein Bias (Intercept). Sie berechnen die Summe von den gewichtenten Inputs (Skalarkprodukt), fügen Bias hinzu und passen es in eine nichtlineare Aktivierungsfunktion. Nachfolgend ein Beispiel eines einfachen Netzes:
 \includegraphics[width=\linewidth]{img/neural-network.png}
+Ergänzung Bild oben: Input=$w_x$=Weight, Bias=b, Neuron="verschiedene Farben", nach dem ersten Hidden Layer kann noch ein zweiter angeschlossen werden.\\
+Berechnung aller (trainable) Parameter: $Anzahl \quad Neuronen*(Anzahl \quad Weights + Anzahl  \quad Bias) = Parameter \quad pro \quad Layer$, dies für jeden Layer ausrechnen und addieren.
+Berechnung aller (trainable) Weights: $Anzahl \quad Neuronen* Anzahl \quad Weights = Parameter \quad pro \quad Layer$, dies für jeden Layer ausrechnen und addieren.
+
 Hat ein Netz zahlreiche Hidden Layer, dann wird von einem \textbf{Deep Neural Network} gesprochen.\\
 \\
 Ein ANN ist eine Datenstruktur zur Definition beliebig komplexer mathematischer Funktionen.
@@ -27,3 +31,9 @@ Ein ANN ist eine Datenstruktur zur Definition beliebig komplexer mathematischer 
 \item Das ANN wird mit zufälligen Gewichten initialisiert und erzeugt eine Ausgabe $\hat y$. Dann wird ein Optimierer (z. B. SGD) eine Kostenfunktion (z. B. MSE).
 \item Das heißt, bei jeder Iteration und für jedes einzelne Gewicht w(und jeden Bias b) wird die partielle Ableitung $\frac{\delta}{\delta w}(y- \hat y)^2$ berechnet werden muss. Glücklicherweise gibt es einen Algorithmus, der dies sehr effizient macht: \textbf{Backpropagation}.
 \end{itemize}
+\subsection{ReLU}
+ReLU steht für rectified linear unit und ist eine Aktivierungsfunktion. Es ist definiert als $y = max(0, x)$. Es sieht wie folgt aus:
+\includegraphics[width=\linewidth]{img/relu.png}
+Dying ReLU = ReLU, welches nie positiv wird und immer 0 bleibt, da der Output(x) nie einen positiven Wert animmt.\\
+\textcolor{myblue}{Activation Function}\\
+Es ist nur eine Funktion, die verwendet wird, um die Ausgabe von Knoten zu erhalten. Sie ist auch als Übertragungsfunktion(Transfer Function) bekannt. Auf dem Bild ist es der rechteste, schwarze Pfeil.

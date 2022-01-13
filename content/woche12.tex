@@ -5,7 +5,8 @@ Wir stellen uns die Frage ob das Model gut genug ist, weshalb wir das Modell gen
 \textbf{False Negative:} Der berechnete Wert ist 0 und der wahre Wert ist 1. (Fälschlicherweise falsch)\\
 \textbf{True Negative:} Der berechnete Wert ist 0 und der wahre Wert ebenso. (Korrekt)\\
 \textbf{True Positive:} Der berechnete Wert ist 1 und der wahre Wert ebenso. (Korrekt)\\
-\includegraphics[height=\linewidth, angle=90]{img/confusion_matrix.png}
+\includegraphics[width=0.8\linewidth]{img/confusion_matrix.png}
+\includegraphics[width=0.8\linewidth]{img/confusion_matrix_description.png}
 Bei oben genannten Formeln ist die Mean Accuracy nicht genug um bestimmen zu können, ob wir ein gutes Modell haben. Beispiel: Dataset wo 90\% Nein und 10\% Ja sind. Das Modell sagt nun einfach immer Nein. Hier ist dann die Accurracy bei 90\%. Nun schauen wir die weiteren Werte an Precision und Recall. Diese sind in diesem Modell jeweils 0...
 \subsection{Precision vs Recall}
 Es kommt drauf an worauf man den Fokus legt je nach Applikation. Nachfolgend die Folie dazu:
@@ -22,7 +23,7 @@ Was der Threshold angeht gibt es keine allgemeingültige Lösung mittels Mathema
 \end{itemize}
 \item Wir erhalten unterschiedliche TPR und FPR Werte. Diese können wir Plotten -> Ergibt ROC Space (Anderer Plot mit Precision und Recall könnte ein Schnittpunkt ergeben, was sicher ein sehr guter Punkt ist)
 \end{enumerate}
-\includegraphics[width=\linewidth]{img/treshold.png}
+\includegraphics[width=0.6\linewidth]{img/treshold.png}\\
 Eine ROC-Kurve ist ein grafisches Diagramm, das die Diagnosefähigkeit eines binären Klassifizierungssystems veranschaulicht, während seine Unterscheidungsschwelle variiert wird. \\
 Die ROC-Kurve wird erstellt, indem die Rate der echten positiven Ergebnisse (TPR) gegen die Rate der falschen positiven Ergebnisse (FPR) bei verschiedenen Schwellenwerten aufgetragen wird.
 \section{K-Nearest-Neighbours (KNN)}
@@ -37,13 +38,14 @@ Logistic Regression kann hier funktionieren, ist aber sehr umständlich. Mann mu
 \item Value von k bestimmen (Nummer von Nachbaren, welche berücksichtigt werden sollten (1, 5, 10, 15, ...))
 \item Für jeden Test-Datenpunkt
 \begin{itemize}
-\item Für alle Trainingsdaten muss Distanz berechnet werden d(xtest, xtrain): Mit Euclidean, Manhatten, cosine, ...
+\item Für alle Trainingsdaten muss Distanz berechnet werden d(xtest, xtrain): Mit Euclidean, Manhattan, cosine, ...
 \item Trainingdaten müssen in ascending Order sortiert werden
 \item Die ersten k Datenpunkte werden von der Sortierung genommen
 \item Von diesen Punkte werden die am häufigsten vorkommende Klasse genommen als Klassifikation
 \end{itemize}
 \end{enumerate}
-Key-Elemente: Die Anzahl Nachbarn k, Distanz-Metrik
+Key-Elemente: Die Anzahl Nachbarn k, Distanz-Metrik\\
+\textbf{Beispiel}: Wenn man einen Punkt einer Klasse zuordnen muss und nichts gegeben ist, dann Manhattan Distanz nehmen und um den Punkt ein Quadrat zeichnen, dass  die nächsten N=12 Nachbarn einschliesst und schauen, von welcher Klasse am meisten vorhanden sind.
 \subsection{Distanz-Metriken}
 Es gibt unterschiedliche Definitionen von Distanzen, die verwendet werden können.
 \includegraphics[width=\linewidth]{img/distance_metric.png}
@@ -53,12 +55,11 @@ Um dies zu bestimmen sollte man folgende Elemente von AI verwenden (Beschrieben 
 \item Test-Train split
 \item Cross Validation
 \item Test Performanceüberwachung (Mean accurarcy, Precision, Recall)
-\item 
 \end{itemize}
 \subsection{Vor/Nachteile}
 \textcolor{green}{Vorteile:}\\
 \begin{itemize}
-\item -Einfaches Modell
+\item Einfaches Modell
 \item Wenige Hyperparameter
 \end{itemize}
 

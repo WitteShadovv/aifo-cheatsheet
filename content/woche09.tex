@@ -39,5 +39,6 @@ $$\sum_{i=1}^n(y_i-\sum_{j=1}^p x_{ij} \beta_j)^2+ \lambda \sum_{j=1}^p \beta^2_
 \end{enumerate}
 
 «Lamda ist der Hyperparameter»\\
-Lamda = 0: dann haben wir kein Constraint also nur MSE. Vergrössern von Lamda: zu grosse Bias, kleinere Varianz
+Lamda = 0: dann haben wir kein Constraint also nur MSE. Vergrössern von Lamda: zu grosse Bias, kleinere Varianz\\
+\textbf{Beispiel}: Wenn man zwei Modelle gegeben hat, die mit verschiedenen Regulasierungswerten($\lambda$) trainiert wurden, dann wähle das Modell, das im Schnitt die besseren Werte erzielt. Bei grösseren Regulasierungswerten ($\lambda$) erhält man tiefere Varianz, aber höheres Bias. Doch bei einer grossen Varianz soll man ein neues Modell trainieren, mit dem Besseren Regularisierungswert($\lambda$).
 \includegraphics[width=\linewidth]{img/l-norm.png}

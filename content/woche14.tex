@@ -17,7 +17,7 @@ dies zwei mal vorkommt und Versicolor nur einmal.\\
 \textcolor{myblue}{Soft}\\
 Kann nur genommen werden, wenn Ergebnisse Warscheinlichkeiten sind, nicht Klassen. Dann kann man einen Durschnitt aus
 allen Modellen nehmen.
-\subsection{Auswählen der Daten}
+\subsection{Auswählen der Daten (Bagging)}
 Für die verschiedenen Modelle müssen die Daten aufgesplittet werden. Da gibt es grob zwei Varianten:\\
 \textbf{Sampling without Replacement:} Datenpunkt kann nur einmal selektiert werden. -> Pasting
 \textbf{Sampling with Replacement:} Datenpunkt kann mehrmals selektiert werden. -> Bagging (Bootstrap Aggregating)
@@ -28,8 +28,6 @@ Sampling both features and training data -> Random Patches\\
 Sampling only features -> Random Subspace\\
 \subsection{Out of Bag (oob) Evaluation}
 Es gibt Datenpunkte die nie gewählt werden wenn man die Datenpunkte zufällig wählt. Dies sind dann oob-Punkte. Diese können genutzt werden als Testdaten um das Modell zu trainieren. So braucht man nicht extra vorher die Daten aufzuteilen in Trainings- und Testdaten.
-\subsection{Codebeispiele}
-TODO Add Codebeispiele
 \subsection{No free lunch theorem}
 Warum Ensemble statt alle Zeit investieren in die Optimierung eines einzelnen Modells? Antwort: Weil kein einzelner Algorithmus die Lösung ist für ein Problem und es keinen besten Algorithmus gibt. Wichtige Punkte die zu beachten sind:
 \begin{itemize}
@@ -40,4 +38,4 @@ Warum Ensemble statt alle Zeit investieren in die Optimierung eines einzelnen Mo
 \item Die besten Modelle sind jeweils in der Mitte von zwei Bias-Varianzen-Extremen
 \item Um ein gutes Modell zu finden, muss man mehrere unterschiedliche Modelle probieren und vergleichen mittels Cross-Validation.
 \end{itemize}
-\includegraphics[height=\linewidth, angle=90]{img/bagging_overview.png}
+\includegraphics[width=\linewidth]{img/bagging_overview.png}
